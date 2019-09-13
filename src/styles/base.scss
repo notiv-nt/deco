@@ -1,0 +1,55 @@
+:root {
+  --transition-function: ease-in-out;
+  // --transition-function: cubic-bezier(0.785, 0.135, 0.15, 0.86);
+  --transition-duration: 150ms;
+
+  --icon-size: 1em;
+  --icon-color: currentColor;
+}
+
+html {
+  font-size: 62.5%;
+  word-break: break-word;
+  word-wrap: break-word;
+  line-height: 1.5;
+  font-family: 'Hind', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  &:not(.is-keyboard-navigation) :focus {
+    outline: none;
+  }
+}
+
+body {
+  min-height: 100vh;
+  font-size: 1.6rem;
+  background-color: #f9f9fb;
+}
+
+main {
+  flex-grow: 1;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+ol,
+li {
+  margin: 0;
+  padding: 0;
+}
+
+ul,
+ol {
+  list-style: none;
+}
