@@ -15,6 +15,15 @@
   text-decoration: none;
 }
 
+@mixin input-reset {
+  border: 0;
+  font: inherit;
+  color: inherit;
+  letter-spacing: inherit;
+  display: block;
+  background: transparent;
+}
+
 @mixin icon {
   display: inline-block;
   vertical-align: middle;

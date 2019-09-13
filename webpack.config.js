@@ -118,7 +118,7 @@ module.exports = {
     new VueLoaderPlugin(),
 
     new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, './.static/index.template.html'),
+      template: path.resolve(__dirname, './src/index.template.html'),
       filename: 'index.html',
     }),
 

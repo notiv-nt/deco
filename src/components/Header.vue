@@ -7,7 +7,7 @@
         <app-icon name="bars" />
       </button>
 
-      <div class="primary-nav" v-if="isNavVisible">
+      <div class="primary-nav" :class="{ 'is-visible': isNavVisible }">
         <div class="l-container">
 
           <ul>
@@ -33,37 +33,49 @@
       <img src="/assets/img/logo.svg" alt="">
     </a>
 
-    <ul class="nav-social">
-      <li class="nav-li">
-        <button type="button" class="nav-button">
-          <app-icon name="rss" />
-        </button>
-      </li>
+    <div class="right-wrap">
 
-      <li class="nav-li">
-        <button type="button" class="nav-button">
-          <app-icon type="fab" name="twitter" />
-        </button>
-      </li>
+      <ul class="nav-social">
+        <li class="nav-li">
+          <button type="button" class="nav-button">
+            <app-icon name="rss" />
+          </button>
+        </li>
 
-      <li class="nav-li">
-        <button type="button" class="nav-button">
-          <app-icon type="fab" name="tumblr" />
-        </button>
-      </li>
+        <li class="nav-li">
+          <button type="button" class="nav-button">
+            <app-icon type="fab" name="twitter" />
+          </button>
+        </li>
 
-      <li class="nav-li">
-        <button type="button" class="nav-button">
-          <app-icon type="fab" name="facebook-f" />
-        </button>
-      </li>
+        <li class="nav-li">
+          <button type="button" class="nav-button">
+            <app-icon type="fab" name="tumblr" />
+          </button>
+        </li>
 
-      <li class="nav-li">
-        <button type="button" class="nav-button">
-          <app-icon name="search" />
+        <li class="nav-li">
+          <button type="button" class="nav-button">
+            <app-icon type="fab" name="facebook-f" />
+          </button>
+        </li>
+
+        <li class="nav-li">
+          <button type="button" class="nav-button" @click="isSearchVisible = true">
+            <app-icon name="search" />
+          </button>
+        </li>
+      </ul>
+
+      <form action="/" class="search" :class="{ 'is-visible': isSearchVisible }">
+        <input type="search" class="search-input" placeholder="Search...">
+
+        <button type="button" class="nav-button search-button" @click="isSearchVisible = false">
+          <app-icon name="times" />
         </button>
-      </li>
-    </ul>
+      </form>
+
+    </div>
 
   </div>
 </header>
@@ -73,6 +85,7 @@
 export default {
   data: () => ({
     isNavVisible: false,
+    isSearchVisible: false,
   }),
 };
 </script>
@@ -97,6 +110,7 @@ export default {
   height: 20px;
   display: block;
   height: auto;
+  transform: translateX(140px);
 
   img {
     display: block;
@@ -126,8 +140,13 @@ export default {
   }
 }
 
-.nav-main {
+.nav-main,
+.right-wrap {
   height: 100%;
+}
+
+.right-wrap {
+  position: relative;
 }
 
 .nav-switch {
@@ -145,6 +164,18 @@ export default {
   text-transform: uppercase;
   letter-spacing: 0.84px;
 
+  transition: transform, opacity, visibility;
+  opacity: 0;
+  transform-origin: top;
+  transform: rotateX(-45deg) translateY(-10px);
+  visibility: hidden;
+
+  &.is-visible {
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+  }
+
   ul {
     display: flex;
     align-items: center;
@@ -160,5 +191,37 @@ export default {
   &:hover {
     background-color: rgba(0, 0, 0, .3);
   }
+}
+
+.search {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: 500px;
+  display: flex;
+  align-items: center;
+  background-color: lighten(#212429, 5%);
+  transition: opacity, visibility;
+  opacity: 0;
+  visibility: hidden;
+
+  &.is-visible {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+.search-input {
+  @include input-reset;
+
+  font-size: 1.2em;
+  height: 100%;
+  flex-grow: 1;
+  padding: 0 20px;
+}
+
+.search-button {
+  font-size: 20px;
 }
 </style>

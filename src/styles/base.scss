@@ -1,7 +1,6 @@
 :root {
-  --transition-function: ease-in-out;
-  // --transition-function: cubic-bezier(0.785, 0.135, 0.15, 0.86);
-  --transition-duration: 150ms;
+  --transition-function: cubic-bezier(0.5, 0, 0.2, 1);
+  --transition-duration: 250ms;
 
   --icon-size: 1em;
   --icon-color: currentColor;
@@ -25,6 +24,8 @@ body {
   min-height: 100vh;
   font-size: 1.6rem;
   background-color: #f9f9fb;
+  color: #464646;
+  letter-spacing: 1.5px;
 }
 
 main {
@@ -42,6 +43,7 @@ h3,
 h4,
 h5,
 h6,
+p,
 ul,
 ol,
 li {
