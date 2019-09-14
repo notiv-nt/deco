@@ -1,0 +1,23 @@
+.btn {
+  @include button-reset;
+
+  padding: 14px 26px;
+  color: #fff;
+  font-family: Montserrat, sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.72px;
+  background-color: #212429;
+  transition: background-color, transform;
+
+  &:hover {
+    background-color: lighten(#212429, 20%);
+  }
+
+  &:active {
+    --transition-duration: 50ms;
+
+    transform: translateY(1px) scale(0.99);
+  }
+}

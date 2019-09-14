@@ -1,0 +1,16 @@
+.u {
+  &-main {
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+
+  &-box {
+    box-shadow: 1px 1px 1px rgba(234, 234, 235, 0.75);
+    border: 1px solid rgba(221, 221, 221, 0.15);
+    background-color: #fff;
+  }
+
+  &-mb20 {
+    margin-bottom: 20px;
+  }
+}

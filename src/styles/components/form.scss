@@ -1,0 +1,36 @@
+.form {
+  &__input {
+    @include input-reset;
+
+    width: 100%;
+    padding: 13px 20px;
+
+    box-shadow: 1px 1px 1px rgba(234, 234, 235, 0.75);
+    border: 1px solid rgba(221, 221, 221, 0.15);
+    background-color: #fff;
+
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.7;
+    letter-spacing: 0.8px;
+    transition: border, box-shadow;
+
+    @at-root textarea#{&} {
+      min-height: 50px;
+      resize: vertical;
+    }
+
+    &::placeholder {
+      text-transform: uppercase;
+    }
+
+    &:hover {
+      border: 1px solid rgba(100, 100, 100, 0.4);
+    }
+
+    &:focus {
+      box-shadow: 0 0 3px #09f, 1px 1px 1px rgba(234, 234, 235, 0.75);
+      border-color: #09f;
+    }
+  }
+}
