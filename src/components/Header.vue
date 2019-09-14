@@ -12,7 +12,10 @@
 
           <ul>
             <li>
-              <a href="/" class="primary-nav-link">Home</a>
+              <router-link to="/" class="primary-nav-link">Home</router-link>
+            </li>
+            <li>
+              <router-link to="/contact" class="primary-nav-link">Contact</router-link>
             </li>
             <li>
               <a href="/" class="primary-nav-link">Post types</a>
