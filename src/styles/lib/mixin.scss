@@ -22,6 +22,23 @@
   letter-spacing: inherit;
   display: block;
   background: transparent;
+  width: 100%;
+  flex-grow: 1;
+  border: 1px solid rgba(221, 221, 221, 0.15);
+  transition: border, box-shadow, background-color;
+
+  &::placeholder {
+    text-transform: uppercase;
+  }
+
+  &:hover {
+    border: 1px solid rgba(100, 100, 100, 0.4);
+  }
+
+  &:focus {
+    box-shadow: 0 0 3px #212429, 1px 1px 1px rgba(234, 234, 235, 0.75);
+    border-color: #212429;
+  }
 }
 
 @mixin icon {
@@ -45,4 +62,31 @@
   clip: rect(0 0 0 0);
   overflow: hidden;
   white-space: nowrap;
+}
+
+@mixin crop-text($lineHeight: 1, $lines: 1, $additional: 0) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
+  -webkit-line-clamp: $lines;
+  -webkit-box-orient: vertical;
+  max-height: calc(1em * #{$lineHeight} * #{$lines} - #{$additional});
+}
+
+@mixin crop-lh($margin) {
+  &::before,
+  &::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+  }
+
+  &::before {
+    margin-bottom: $margin * -1;
+  }
+
+  &::after {
+    margin-bottom: $margin * -1;
+  }
 }

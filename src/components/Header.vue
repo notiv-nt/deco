@@ -113,7 +113,7 @@ export default {
   height: 20px;
   display: block;
   height: auto;
-  transform: translateX(140px);
+  transform: translateX(75px);
 
   img {
     display: block;

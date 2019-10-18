@@ -1,11 +1,9 @@
 <template>
-<layout-aside>
+<div>
 
-  <app-post></app-post>
-  <app-post></app-post>
-  <app-post></app-post>
+  post
 
-</layout-aside>
+</div>
 </template>
 
 <script>

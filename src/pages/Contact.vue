@@ -9,7 +9,12 @@
 
     <input type="text" name="website" class="u-mb20 form__input" placeholder="Website Address">
 
-    <textarea name="message" rows="10" class="u-mb20 form__input" placeholder="Please write a message here!"></textarea>
+    <textarea
+      name="message"
+      rows="10"
+      class="u-mb20 form__input"
+      placeholder="Please write a message here!"
+    ></textarea>
 
     <button class="btn" type="button">Send Message</button>
   </form>

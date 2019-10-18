@@ -32,6 +32,7 @@
     "postcss-fluid": "^1.3.0",
     "postcss-loader": "^3.0.0",
     "postcss-media-functions": "^2.0.0",
+    "postcss-scss": "^2.0.0",
     "postcss-transition": "^1.0.0",
     "sanitize.css": "^11.0.0",
     "sass-loader": "^8.0.0",

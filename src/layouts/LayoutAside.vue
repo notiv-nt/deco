@@ -1,13 +1,11 @@
 <template>
-<div class="layout-wrap">
+<div class="l-main l-container layout-wrap">
 
-  <div class="main">
+  <main class="main">
     <slot></slot>
-  </div>
+  </main>
 
-  <div class="u-box aside">
-
-  </div>
+  <app-aside class="aside"></app-aside>
 
 </div>
 </template>
@@ -25,7 +23,6 @@ export default {
 }
 
 .aside {
-  padding: 40px 30px;
   width: 360px;
   flex-shrink: 0;
   margin-left: 30px;
