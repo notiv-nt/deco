@@ -30,5 +30,6 @@ export default {
 
 .main {
   flex-grow: 1;
+  min-width: 0;
 }
 </style>

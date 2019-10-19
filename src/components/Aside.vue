@@ -14,9 +14,9 @@
   <h2 class="t-h2 heading">Categories</h2>
   <div class="list">
 
-    <a href="#" class="list-item" v-for="(count, name) in categories" :key="name">
-      {{ name }}
-      <span class="u-mlauto">{{ count }}</span>
+    <a href="#" class="list-item" v-for="item in categories" :key="item.id">
+      <span v-html="item.name"></span>
+      <span class="u-mlauto">{{ item.count }}</span>
     </a>
 
   </div>
@@ -53,15 +53,7 @@
 <script>
 export default {
   data: () => ({
-    categories: {
-      lifestyle: 93,
-      audio: 102,
-      gallery: 83,
-      image: 4,
-      standard: 109,
-      status: 50,
-      video: 102,
-    },
+    categories: [],
 
     posts: [
       {
@@ -105,6 +97,12 @@ export default {
       'linkedin-in': '#',
     },
   }),
+
+  async created() {
+    const categories = await fetch(`${process.env.API}/categories?exclude=1`).then((r) => r.json());
+
+    this.categories = categories;
+  },
 };
 </script>
 

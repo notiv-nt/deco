@@ -17,4 +17,9 @@ module.exports = {
   parserOptions: {
     parser: 'babel-eslint',
   },
+
+  rules: {
+    'no-underscore-dangle': 'off',
+    'max-len': [2, { code: 150 }],
+  },
 };

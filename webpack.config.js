@@ -2,6 +2,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
 const CopyPlugin = require('copy-webpack-plugin');
+const Dotenv = require('dotenv-webpack');
 
 module.exports = {
   stats: 'minimal',
@@ -122,6 +123,8 @@ module.exports = {
       template: path.resolve(__dirname, './src/index.template.html'),
       filename: 'index.html',
     }),
+
+    new Dotenv(),
 
     new CopyPlugin([{ from: path.resolve('public'), to: './assets' }]),
   ],

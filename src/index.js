@@ -6,6 +6,7 @@ import App from './App';
 
 import components from './components';
 import layouts from './layouts';
+import './mixins';
 
 import router from './router';
 

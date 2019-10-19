@@ -18,13 +18,7 @@
               <router-link to="/contact" class="primary-nav-link">Contact</router-link>
             </li>
             <li>
-              <a href="/" class="primary-nav-link">Post types</a>
-            </li>
-            <li>
-              <a href="/" class="primary-nav-link">Travel</a>
-            </li>
-            <li>
-              <a href="/" class="primary-nav-link">Feature</a>
+              <router-link to="/about" class="primary-nav-link">About</router-link>
             </li>
           </ul>
 
@@ -161,7 +155,7 @@ export default {
   top: 100%;
   left: 0;
   right: 0;
-  background-color: rgba(0, 0, 0, .3);
+  background-color: rgba(0, 0, 0, .6);
 
   font-size: 14px;
   text-transform: uppercase;
