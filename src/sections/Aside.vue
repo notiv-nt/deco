@@ -93,7 +93,7 @@ export default {
       twitter: '#',
       'facebook-f': '#',
       dribbble: '#',
-      pinterest: '#',
+      'pinterest-p': '#',
       'linkedin-in': '#',
     },
   }),

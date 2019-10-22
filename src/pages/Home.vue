@@ -1,12 +1,18 @@
 <template>
 <layout-aside>
 
-  <app-post
-    class="post"
-    v-for="post in posts"
-    :key="post.id"
-    :post="post"
-  ></app-post>
+  <app-loader>
+    <template v-if="posts">
+
+      <app-post
+        class="u-mb60"
+        v-for="post in posts"
+        :key="post.id"
+        :post="post"
+      ></app-post>
+
+    </template>
+  </app-loader>
 
 </layout-aside>
 </template>
@@ -29,8 +35,7 @@ export default {
         date: post.date,
         id: post.id,
         slug: post.slug,
-        content: post.content.rendered,
-        excerpt: post.excerpt.rendered,
+        content: post.excerpt.rendered,
         author: post._embedded.author[0].name,
         image: post._embedded['wp:featuredmedia'][0].source_url,
         comments: post.comments,
@@ -44,7 +49,4 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.post {
-  margin-bottom: 60px;
-}
 </style>

@@ -46,6 +46,11 @@ module.exports = {
       },
 
       {
+        test: /\.css$/,
+        use: [{ loader: 'vue-style-loader' }, { loader: 'css-loader', options: { sourceMap: true } }],
+      },
+
+      {
         test: /\.s?css$/,
         exclude: /node_modules/,
         use: [
@@ -132,5 +137,6 @@ module.exports = {
   devServer: {
     port: 9090,
     historyApiFallback: true,
+    clientLogLevel: 'silent',
   },
 };

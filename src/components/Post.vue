@@ -1,5 +1,5 @@
 <template>
-<div class="u-box">
+<article class="u-box">
 
   <div class="media">
     <img :src="post.image" :alt="post.title" class="u-responsive thumbnail">
@@ -11,7 +11,9 @@
 
   <div class="body">
     <p class="color-gray" v-html="post.categories"></p>
-    <h2 class="t-h1 title">{{ post.title }}</h2>
+    <h2 class="t-h1 title">
+      <router-link :to="'/post/' + post.id">{{ post.title }}</router-link>
+    </h2>
 
     <ul class="meta">
       <li class="meta-item">
@@ -25,9 +27,9 @@
       </li>
     </ul>
 
-    <div class="content" v-html="post.excerpt"></div>
+    <div class="plain-text content" v-html="post.content"></div>
 
-    <router-link :to="'/post/' + post.slug" class="read-more">Read more</router-link>
+    <router-link :to="'/post/' + post.id" class="read-more">Read more</router-link>
   </div>
 
   <div class="footer">
@@ -37,10 +39,10 @@
         <span class="color-gray">{{ post.comments }} comments</span>
       </li>
 
-      <li class="meta-item">
+      <!-- <li class="meta-item">
         <app-icon class="meta-icon" name="heart"></app-icon>
         <span class="color-gray">Like 25</span>
-      </li>
+      </li> -->
     </ul>
 
     <ul class="socials">
@@ -70,13 +72,14 @@
     </ul>
   </div>
 
-</div>
+</article>
 </template>
 
 <script>
 export default {
   props: {
     post: Object,
+    context: String,
   },
 
   computed: {
@@ -115,6 +118,12 @@ export default {
 .title {
   text-transform: uppercase;
   margin: 13px 0 17px;
+
+  a {
+    &:hover {
+      text-decoration: underline;
+    }
+  }
 }
 
 .color-gray {
@@ -166,10 +175,6 @@ export default {
     border-color: #212121;
     background-color: #212121;
   }
-}
-
-.content {
-  line-height: 1.6;
 }
 
 .footer {

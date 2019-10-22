@@ -13,6 +13,7 @@
   &-mb20 { margin-bottom: 20px; }
   &-mb30 { margin-bottom: 30px; }
   &-mb40 { margin-bottom: 40px; }
+  &-mb60 { margin-bottom: 60px; }
 
   &-mt20 { margin-top: 20px; }
   &-mt30 { margin-top: 30px; }
@@ -23,5 +24,9 @@
     max-width: 100%;
     width: 100%;
     height: auto;
+  }
+
+  &-sr-only {
+    @include visually-hidden;
   }
 }

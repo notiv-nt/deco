@@ -14,7 +14,7 @@ const routes = [
     component: () => import('@/pages/About'),
   },
   {
-    path: '/:page',
+    path: '/post/:id',
     component: () => import('@/pages/Single'),
   },
   {

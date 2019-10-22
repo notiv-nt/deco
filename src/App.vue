@@ -4,6 +4,7 @@
   <app-header />
 
   <main>
+    <app-promo />
     <router-view></router-view>
   </main>
 
