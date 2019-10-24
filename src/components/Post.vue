@@ -12,7 +12,8 @@
   <div class="body">
     <p class="color-gray" v-html="post.categories"></p>
     <h2 class="t-h1 title">
-      <router-link :to="'/post/' + post.id">{{ post.title }}</router-link>
+      <router-link :to="'/post/' + post.id" v-if="!isSingle">{{ post.title }}</router-link>
+      <span v-else>{{ post.title }}</span>
     </h2>
 
     <ul class="meta">
@@ -29,10 +30,14 @@
 
     <div class="plain-text content" v-html="post.content"></div>
 
-    <router-link :to="'/post/' + post.id" class="read-more">Read more</router-link>
+    <router-link
+      :to="'/post/' + post.id"
+      class="read-more"
+      v-if="!isSingle"
+    >Read more</router-link>
   </div>
 
-  <div class="footer">
+  <div class="footer" v-if="!isSingle">
     <ul class="meta">
       <li class="meta-item">
         <app-icon class="meta-icon" name="comments"></app-icon>
@@ -86,6 +91,10 @@ export default {
     postDate() {
       return this.$date.format(new Date(this.post.date), 'd MMMM, yyyy');
     },
+
+    isSingle() {
+      return this.content !== 'single';
+    }
   },
 };
 </script>
