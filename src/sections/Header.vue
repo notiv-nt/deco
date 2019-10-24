@@ -156,10 +156,10 @@ export default {
   left: 0;
   right: 0;
   background-color: rgba(0, 0, 0, .6);
-
   font-size: 14px;
   text-transform: uppercase;
   letter-spacing: 0.84px;
+  z-index: var(--z-header);
 
   transition: transform, opacity, visibility;
   opacity: 0;
