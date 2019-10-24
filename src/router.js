@@ -5,6 +5,7 @@ const routes = [
     path: '/',
     component: () => import('@/pages/Home'),
   },
+
   {
     path: '/contact',
     component: () => import('@/pages/Contact'),
@@ -12,6 +13,7 @@ const routes = [
       noPromo: true,
     },
   },
+
   {
     path: '/about',
     component: () => import('@/pages/About'),
@@ -19,10 +21,12 @@ const routes = [
       noPromo: true,
     },
   },
+
   {
     path: '/post/:id',
     component: () => import('@/pages/Single'),
   },
+
   {
     path: '/*',
     component: () => import('@/pages/404'),
