@@ -4,8 +4,8 @@
   <app-header />
 
   <main>
-    <app-promo />
-    <router-view></router-view>
+    <app-promo v-if="isPromoVisible" />
+    <router-view />
   </main>
 
   <app-footer />
@@ -15,6 +15,12 @@
 
 <script>
 export default {
+  computed: {
+    isPromoVisible() {
+      return this.$route.meta.noPromo !== true;
+    }
+  },
+
   methods: {
     setTabKeyHandler() {
       const TAB_CODE = 9;

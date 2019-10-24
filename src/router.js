@@ -8,10 +8,16 @@ const routes = [
   {
     path: '/contact',
     component: () => import('@/pages/Contact'),
+    meta: {
+      noPromo: true,
+    },
   },
   {
     path: '/about',
     component: () => import('@/pages/About'),
+    meta: {
+      noPromo: true,
+    },
   },
   {
     path: '/post/:id',
