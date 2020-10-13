@@ -1,1 +1,1 @@
-<?php include 'dist/index.html' ?>
+nothing

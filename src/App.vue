@@ -18,7 +18,7 @@ export default {
   computed: {
     isPromoVisible() {
       return this.$route.meta.noPromo !== true;
-    }
+    },
   },
 
   methods: {
